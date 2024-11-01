@@ -33,11 +33,11 @@ const SimpleTransaction: FC<{ address: string }> = ({ address }) => {
         width="100%"
       >
         <Button
+          className="full"
           onClick={async () => {
             const r = await walletRequest.requestAsync()
             alert(`Transaction sent: ${r.transaction_hash}`)
           }}
-          style={{ width: "100%" }}
         >
           Simple Transaction
         </Button>

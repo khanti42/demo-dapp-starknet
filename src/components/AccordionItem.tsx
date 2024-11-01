@@ -8,39 +8,6 @@ interface AccordionItemProps {
   withBorder?: boolean
 }
 
-// TODO: move global css
-const styles = {
-  button: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "transparent",
-    border: "none",
-    cursor: "pointer",
-    transition: "background-color 0.2s",
-  },
-  title: {
-    fontWeight: "bold",
-  },
-  icon: {
-    width: "16px",
-    height: "16px",
-    transition: "transform 0.2s",
-  },
-  iconOpen: {
-    transform: "rotate(180deg)",
-  },
-  content: {
-    overflow: "hidden",
-    transition: "max-height 0.2s ease-out",
-    maxHeight: "0",
-  },
-  contentOpen: {
-    maxHeight: "500px",
-  },
-}
-
 const AccordionItem: FC<AccordionItemProps> = ({
   title,
   children,
@@ -51,27 +18,17 @@ const AccordionItem: FC<AccordionItemProps> = ({
   return (
     <div>
       <button
-        style={{
-          ...styles.button,
-          ...(withBorder ? { padding: "8px" } : { padding: "16px 0" }),
-        }}
+        className={`accordion-button ${withBorder ? "accordion-button-with-border" : ""}`}
         onClick={onClick}
         aria-expanded={isOpen}
       >
         <span
-          style={{
-            ...styles.title,
-
-            ...(withBorder ? { fontSize: "1em" } : { fontSize: "1.5em" }),
-          }}
+          className={`accordion-title ${withBorder ? "accordion-title-with-border" : ""}`}
         >
           {title}
         </span>
         <svg
-          style={{
-            ...styles.icon,
-            ...(isOpen ? styles.iconOpen : {}),
-          }}
+          className={`accordion-icon ${isOpen ? "accordion-icon-open" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -85,10 +42,7 @@ const AccordionItem: FC<AccordionItemProps> = ({
         </svg>
       </button>
       <div
-        style={{
-          ...styles.content,
-          ...(isOpen ? styles.contentOpen : {}),
-        }}
+        className={`accordion-content ${isOpen ? "accordion-content-open" : ""}`}
       >
         <div>{children}</div>
       </div>

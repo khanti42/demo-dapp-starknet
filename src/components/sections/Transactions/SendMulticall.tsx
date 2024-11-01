@@ -119,7 +119,7 @@ const SendMulticall = () => {
   // Function to execute approve and transfer separately
 
   return (
-    <Button onClick={handleTransferSubmit} style={{ width: "100%" }}>
+    <Button className="full" onClick={handleTransferSubmit}>
       Send Multicall
     </Button>
 

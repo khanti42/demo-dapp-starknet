@@ -43,13 +43,11 @@ const Connect = () => {
               <Flex gap="12px">
                 <Flex flex={1} flexDirection="column" gap="12px">
                   <Button
+                    className="full"
                     onClick={async () => {
                       const { connector } = await starknetkitConnectModal()
                       if (!connector) return // or throw error
                       await connectAsync({ connector: connector as any })
-                    }}
-                    style={{
-                      width: "100%",
                     }}
                   >
                     Starknetkit Modal
@@ -74,12 +72,10 @@ const Connect = () => {
 
                               return (
                                 <Button
+                                  className="full"
                                   key={connector.id}
                                   onClick={async () => {
                                     await connectAsync({ connector })
-                                  }}
-                                  style={{
-                                    width: "100%",
                                   }}
                                 >
                                   {connector.name}
@@ -95,7 +91,7 @@ const Connect = () => {
 
                 <Flex flex={1} height="fit-content">
                   <Button
-                    style={{ width: "100%" }}
+                    className="full"
                     onClick={() => disconnect()}
                     disabled={!isConnected}
                   >

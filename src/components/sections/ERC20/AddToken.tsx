@@ -38,10 +38,10 @@ const AddToken = () => {
               width="50%"
             >
               <Button
+                className="full"
                 onClick={async () => {
                   await walletRequest.requestAsync()
                 }}
-                style={{ width: "100%" }}
               >
                 Add Token
               </Button>

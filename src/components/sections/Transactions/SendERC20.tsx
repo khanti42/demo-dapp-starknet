@@ -70,7 +70,7 @@ const SendERC20 = () => {
 
   return (
     <Flex flex={1} width="100%" gap={10}>
-      <form onSubmit={handleTransferSubmit} style={{ width: "100%" }}>
+      <form className="full" onSubmit={handleTransferSubmit}>
         <Flex
           flexDirection="column"
           flex={1}
@@ -84,11 +84,6 @@ const SendERC20 = () => {
             id="transfer-to"
             placeholder="To"
             value={transferTo}
-            style={{
-              padding: "8px",
-              borderRadius: "8px",
-              border: "1px solid #C8C8C8",
-            }}
             onChange={(e) => setTransferTo(e.target.value)}
           />
 
@@ -97,14 +92,13 @@ const SendERC20 = () => {
             id="transfer-amount"
             placeholder="Amount"
             value={transferAmount}
-            style={{
-              padding: "8px",
-              borderRadius: "8px",
-              border: "1px solid #C8C8C8",
-            }}
             onChange={(e) => setTransferAmount(e.target.value)}
           />
-          <Button type="submit" disabled={buttonsDisabled} hideChevron>
+          <Button
+            type="submit"
+            disabled={buttonsDisabled}
+            style={{ maxWidth: "100px" }}
+          >
             <span>Send</span>
           </Button>
         </Flex>

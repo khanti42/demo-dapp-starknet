@@ -20,10 +20,10 @@ const ChangeNetwork = () => {
       width="100%"
     >
       <Button
+        className="full"
         onClick={async () => {
           await walletRequest.requestAsync()
         }}
-        style={{ width: "100%" }}
       >
         Change Network
       </Button>

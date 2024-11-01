@@ -26,10 +26,10 @@ const Transactions = () => {
                 <Flex gap="12px">
                   <Flex flexDirection="column" flex="1" gap="8px">
                     <Button
+                      className="full"
                       onClick={() => {
                         setShowErc20((prev) => !prev)
                       }}
-                      style={{ width: "100%" }}
                     >
                       Send ERC20
                     </Button>

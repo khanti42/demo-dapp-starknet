@@ -13,16 +13,6 @@ const Button: FC<ButtonProps> = ({
 }) => (
   <button
     style={{
-      border: "1px solid #C8C8C8",
-      backgroundColor: "transparent",
-      borderRadius: "8px",
-      padding: "8px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      cursor: "pointer",
-      gap: "4px",
-      fontWeight: "bold",
       ...style,
     }}
     {...props}
@@ -32,12 +22,7 @@ const Button: FC<ButtonProps> = ({
 
     {!hideChevron && (
       <svg
-        style={{
-          width: "16px",
-          height: "16px",
-          transition: "transform 0.2s",
-          transform: "rotate(-90deg)",
-        }}
+        className="chevron-right"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

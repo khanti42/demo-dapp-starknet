@@ -68,13 +68,13 @@ const SignMessage = () => {
             title: "Sign Message",
             content: (
               <>
-                <Flex flex={1} width="100%">
+                <Flex flex={1} width="100%" marginBottom="16px">
                   <form
+                    className="full"
                     onSubmit={(e) => {
                       e.preventDefault()
                       handleSignSubmit()
                     }}
-                    style={{ width: "100%" }}
                   >
                     <Flex
                       flexDirection="column"
@@ -88,27 +88,14 @@ const SignMessage = () => {
                         id="short-text"
                         name="short-text"
                         placeholder="Short text"
-                        style={{
-                          padding: "8px",
-                          borderRadius: "8px",
-                          border: "1px solid #C8C8C8",
-                          width: "100%",
-                        }}
+                        className="full"
                         value={shortText}
                         onChange={(e) => setShortText(e.target.value)}
                       />
 
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "1em",
-                        }}
-                      >
-                        <Button type="submit" hideChevron>
-                          Sign
-                        </Button>
-                      </div>
+                      <Button type="submit" style={{ maxWidth: "100px" }}>
+                        Sign
+                      </Button>
                     </Flex>
                   </form>
                 </Flex>
@@ -123,11 +110,6 @@ const SignMessage = () => {
                             placeholder="r"
                             value={lastSig[0]}
                             readOnly
-                            style={{
-                              padding: "8px",
-                              borderRadius: "8px",
-                              border: "1px solid #C8C8C8",
-                            }}
                           />
                           <textarea
                             id="s"
@@ -135,11 +117,6 @@ const SignMessage = () => {
                             placeholder="s"
                             value={lastSig[1]}
                             readOnly
-                            style={{
-                              padding: "8px",
-                              borderRadius: "8px",
-                              border: "1px solid #C8C8C8",
-                            }}
                           />
                         </>
                       ) : (
@@ -152,11 +129,6 @@ const SignMessage = () => {
                               placeholder="signer"
                               value={lastSig[2]}
                               readOnly
-                              style={{
-                                padding: "8px",
-                                borderRadius: "8px",
-                                border: "1px solid #C8C8C8",
-                              }}
                             />
                           </Flex>
                           <Flex flexDirection="column" gap="4px">
@@ -167,11 +139,6 @@ const SignMessage = () => {
                               placeholder="r"
                               value={lastSig[3]}
                               readOnly
-                              style={{
-                                padding: "8px",
-                                borderRadius: "8px",
-                                border: "1px solid #C8C8C8",
-                              }}
                             />
                           </Flex>
                           <Flex flexDirection="column" gap="4px">
@@ -182,11 +149,6 @@ const SignMessage = () => {
                               placeholder="s"
                               value={lastSig[4]}
                               readOnly
-                              style={{
-                                padding: "8px",
-                                borderRadius: "8px",
-                                border: "1px solid #C8C8C8",
-                              }}
                             />
                           </Flex>
                           {lastSig.length > 5 && (
@@ -199,11 +161,6 @@ const SignMessage = () => {
                                   placeholder="signer"
                                   value={lastSig[6]}
                                   readOnly
-                                  style={{
-                                    padding: "8px",
-                                    borderRadius: "8px",
-                                    border: "1px solid #C8C8C8",
-                                  }}
                                 />
                               </Flex>
                               <Flex flexDirection="column" gap="4px">
@@ -214,11 +171,6 @@ const SignMessage = () => {
                                   placeholder="r"
                                   value={lastSig[7]}
                                   readOnly
-                                  style={{
-                                    padding: "8px",
-                                    borderRadius: "8px",
-                                    border: "1px solid #C8C8C8",
-                                  }}
                                 />
                               </Flex>
                               <Flex flexDirection="column" gap="4px">
@@ -229,11 +181,6 @@ const SignMessage = () => {
                                   placeholder="s"
                                   value={lastSig[8]}
                                   readOnly
-                                  style={{
-                                    padding: "8px",
-                                    borderRadius: "8px",
-                                    border: "1px solid #C8C8C8",
-                                  }}
                                 />
                               </Flex>
                             </>
