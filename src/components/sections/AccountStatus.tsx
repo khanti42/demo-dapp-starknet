@@ -21,7 +21,7 @@ const Box: FC<{
   </Flex>
 )
 
-const AccountSection = () => {
+const AccountStatus = () => {
   const { address, isConnected, chainId } = useAccount()
   const { connector } = useConnect()
 
@@ -102,4 +102,4 @@ const AccountSection = () => {
   )
 }
 
-export { AccountSection }
+export { AccountStatus }

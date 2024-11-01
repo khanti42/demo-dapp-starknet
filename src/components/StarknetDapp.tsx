@@ -3,7 +3,7 @@ import { SignMessage } from "@/components/sections/SignMessage"
 import { Transactions } from "@/components/sections/Transactions/Transactions"
 import { Connect } from "./Connect"
 import { Flex } from "./Flex"
-import { AccountSection } from "./sections/AccountSection"
+import { AccountStatus } from "./sections/AccountStatus"
 import { AddToken } from "./sections/ERC20/AddToken"
 import { Network } from "./sections/Network/Network"
 
@@ -18,7 +18,7 @@ const StarknetDapp = () => {
       margin="0 auto"
       gap="24px"
     >
-      <AccountSection />
+      <AccountStatus />
       <Connect />
       <Transactions />
       <SignMessage />
