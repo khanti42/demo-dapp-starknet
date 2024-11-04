@@ -1,7 +1,7 @@
 import { RequestFnCall, RpcMessage } from "@starknet-io/types-js"
 import { useState } from "react"
 import { useWalletRequest } from "@starknet-react/core"
-import { Flex } from "@/components/Flex"
+import { Flex } from "@/components/ui/Flex"
 
 type Props = {
   request: RequestFnCall<RpcMessage["type"]>

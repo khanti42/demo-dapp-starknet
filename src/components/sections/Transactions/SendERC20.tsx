@@ -1,4 +1,4 @@
-import { Flex } from "@/components/Flex"
+import { Flex } from "@/components/ui/Flex"
 import { ETHTokenAddress } from "@/constants"
 import { parseInputAmountToUint256 } from "@/helper/token"
 import {
@@ -8,7 +8,7 @@ import {
   useSendTransaction,
 } from "@starknet-react/core"
 import { useState } from "react"
-import { Button } from "../../Button"
+import { Button } from "../../ui/Button"
 
 const abi = [
   {

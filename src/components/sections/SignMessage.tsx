@@ -1,9 +1,9 @@
-import { Flex } from "@/components/Flex"
+import { Flex } from "@/components/ui/Flex"
 import { useAccount, useSignTypedData } from "@starknet-react/core"
 import { useState } from "react"
 import { constants, num, stark } from "starknet"
-import { Button } from "../Button"
-import { Accordion } from "../Accordion"
+import { Button } from "../ui/Button"
+import { Accordion } from "../ui/Accordion"
 
 const SignMessage = () => {
   const { account, address, chainId } = useAccount()

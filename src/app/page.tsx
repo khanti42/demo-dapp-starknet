@@ -6,7 +6,7 @@ import { constants } from "starknet"
 import { CHAIN_ID } from "@/constants"
 import { connectors } from "@/connectors"
 import { StarknetDapp } from "@/components/StarknetDapp"
-import { Flex } from "@/components/Flex"
+import { Flex } from "@/components/ui/Flex"
 
 export default function Home() {
   const chains = [

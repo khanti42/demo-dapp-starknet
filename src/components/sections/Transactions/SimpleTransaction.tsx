@@ -2,8 +2,8 @@ import { ETHTokenAddress } from "@/constants"
 import { CallData } from "starknet"
 import { useWalletRequest } from "@starknet-react/core"
 import { parseInputAmountToUint256 } from "@/helper/token"
-import { Flex } from "../../Flex"
-import { Button } from "../../Button"
+import { Flex } from "../../ui/Flex"
+import { Button } from "../../ui/Button"
 import { FC } from "react"
 
 const SimpleTransaction: FC<{ address: string }> = ({ address }) => {

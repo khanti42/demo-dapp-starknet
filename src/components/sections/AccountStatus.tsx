@@ -7,8 +7,8 @@ import {
 } from "@starknet-react/core"
 import { FC } from "react"
 import { constants, num } from "starknet"
-import { Accordion } from "../Accordion"
-import { Flex } from "../Flex"
+import { Accordion } from "../ui/Accordion"
+import { Flex } from "../ui/Flex"
 
 const Box: FC<{
   title: string

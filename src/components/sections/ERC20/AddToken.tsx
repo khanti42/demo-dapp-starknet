@@ -1,6 +1,6 @@
-import { Accordion } from "@/components/Accordion"
-import { Button } from "@/components/Button"
-import { Flex } from "@/components/Flex"
+import { Accordion } from "@/components/ui/Accordion"
+import { Button } from "@/components/ui/Button"
+import { Flex } from "@/components/ui/Flex"
 import { useAccount, useWalletRequest } from "@starknet-react/core"
 
 const AddToken = () => {

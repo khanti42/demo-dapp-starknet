@@ -1,7 +1,7 @@
-import { Flex } from "@/components/Flex"
+import { Flex } from "@/components/ui/Flex"
 import { AddNetwork } from "./AddNetwork"
 import { ChangeNetwork } from "./ChangeNetwork"
-import { Accordion } from "@/components/Accordion"
+import { Accordion } from "@/components/ui/Accordion"
 import { useAccount } from "@starknet-react/core"
 
 const Network = () => {

@@ -8,7 +8,7 @@ import {
   useSendTransaction,
 } from "@starknet-react/core"
 import { useState } from "react"
-import { Button } from "../../Button"
+import { Button } from "../../ui/Button"
 
 // ERC20 ABI with approve and transfer functions
 const erc20ABI = [

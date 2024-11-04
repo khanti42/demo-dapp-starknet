@@ -1,5 +1,5 @@
-import { Button } from "@/components/Button"
-import { Flex } from "@/components/Flex"
+import { Button } from "@/components/ui/Button"
+import { Flex } from "@/components/ui/Flex"
 import { ETHTokenAddress } from "@/constants"
 import { useWalletRequest } from "@starknet-react/core"
 import { shortString } from "starknet"

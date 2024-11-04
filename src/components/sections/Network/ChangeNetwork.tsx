@@ -1,5 +1,5 @@
-import { Button } from "@/components/Button"
-import { Flex } from "@/components/Flex"
+import { Button } from "@/components/ui/Button"
+import { Flex } from "@/components/ui/Flex"
 import { useWalletRequest } from "@starknet-react/core"
 import { constants } from "starknet"
 
