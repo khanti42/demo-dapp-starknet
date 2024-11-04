@@ -1,5 +1,5 @@
 import { Flex } from "@/components/ui/Flex"
-import { ETHTokenAddress, provider } from "@/constants"
+import { ETHTokenAddress } from "@/constants"
 import { parseInputAmountToUint256 } from "@/helper/token"
 import {
   Abi,
@@ -58,10 +58,10 @@ const SendERC20 = () => {
 
   const handleTransferSubmit = async (e: React.FormEvent) => {
     try {
+      setLastTxError("")
       e.preventDefault()
       setLastTxStatus("approve")
       const { transaction_hash } = await sendAsync()
-      await provider.waitForTransaction(transaction_hash)
       alert(`Transaction sent: ${transaction_hash}`)
     } catch (error) {
       setLastTxError((error as Error).message)
@@ -99,9 +99,13 @@ const SendERC20 = () => {
           <Button
             type="submit"
             disabled={buttonsDisabled}
-            style={{ maxWidth: "100px" }}
+            style={{ maxWidth: "200px" }}
           >
-            <span>Send</span>
+            <span>
+              {lastTxStatus === "approve"
+                ? "Waiting for transaction"
+                : "Send transaction"}
+            </span>
           </Button>
           {lastTxError ? (
             <span style={{ color: "red" }}>Error: {lastTxError}</span>

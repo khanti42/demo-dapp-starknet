@@ -1,5 +1,6 @@
 // TokenOperations.tsx
-import { ETHTokenAddress, provider } from "@/constants"
+import { Flex } from "@/components/ui/Flex"
+import { ETHTokenAddress } from "@/constants"
 import { parseInputAmountToUint256 } from "@/helper/token"
 import {
   Abi,
@@ -9,7 +10,6 @@ import {
 } from "@starknet-react/core"
 import { useState } from "react"
 import { Button } from "../../ui/Button"
-import { Flex } from "@/components/ui/Flex"
 
 const abi = [
   {
@@ -61,10 +61,10 @@ const SendMulticall = () => {
 
   const handleTransferSubmit = async (e: React.FormEvent) => {
     try {
+      setLastTxError("")
       e.preventDefault()
       setLastTxStatus("approve")
       const { transaction_hash } = await sendAsync()
-      await provider.waitForTransaction(transaction_hash)
       alert(`Transaction sent: ${transaction_hash}`)
     } catch (error) {
       setLastTxError((error as Error).message)
@@ -80,7 +80,9 @@ const SendMulticall = () => {
         onClick={handleTransferSubmit}
         disabled={buttonsDisabled}
       >
-        Send Multicall
+        {lastTxStatus === "approve"
+          ? "Waiting for transaction"
+          : "Send Multicall"}
       </Button>
       {lastTxError ? (
         <span style={{ color: "red" }}>Error: {lastTxError}</span>
