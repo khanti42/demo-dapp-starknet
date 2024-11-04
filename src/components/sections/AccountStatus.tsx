@@ -67,14 +67,18 @@ const AccountStatus = () => {
                         : undefined
                     }
                   />
-                  <Box
-                    title="Eth Balance"
-                    value={
-                      balance && balance?.formatted.length > 7
-                        ? `${balance.formatted.slice(0, 5)} ETH`
-                        : `${balance?.formatted} ETH`
-                    }
-                  />
+                  {balance ? (
+                    <Box
+                      title="Eth Balance"
+                      value={
+                        balance && balance?.formatted.length > 7
+                          ? `${balance.formatted.slice(0, 5)} ETH`
+                          : `${balance?.formatted} ETH`
+                      }
+                    />
+                  ) : (
+                    <Box title="Eth Balance" value="----" />
+                  )}
                 </Flex>
                 <Accordion
                   withBorder
