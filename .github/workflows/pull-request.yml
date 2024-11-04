@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  build-hydrogen:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
