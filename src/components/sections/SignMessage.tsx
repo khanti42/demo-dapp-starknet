@@ -9,9 +9,6 @@ const SignMessage = () => {
   const { account, address, chainId } = useAccount()
   const [shortText, setShortText] = useState("")
   const [lastSig, setLastSig] = useState<string[]>([])
-  const [transactionStatus, setTransactionStatus] = useState<
-    "approve" | "pending" | "idle"
-  >("idle")
 
   const hexChainId =
     typeof chainId === "bigint"
@@ -45,14 +42,10 @@ const SignMessage = () => {
       if (!account) {
         throw new Error("Account not connected")
       }
-
-      setTransactionStatus("approve")
       const result = await signTypedDataAsync()
       setLastSig(stark.formatSignature(result))
-      setTransactionStatus("idle")
     } catch (e) {
       console.error(e)
-      setTransactionStatus("idle")
     }
   }
 

@@ -1,5 +1,5 @@
 // TokenOperations.tsx
-import { ETHTokenAddress } from "@/constants"
+import { ETHTokenAddress, provider } from "@/constants"
 import { parseInputAmountToUint256 } from "@/helper/token"
 import {
   Abi,
@@ -9,52 +9,7 @@ import {
 } from "@starknet-react/core"
 import { useState } from "react"
 import { Button } from "../../ui/Button"
-
-// ERC20 ABI with approve and transfer functions
-const erc20ABI = [
-  {
-    name: "increaseAllowance",
-    type: "function",
-    inputs: [
-      {
-        name: "spender",
-        type: "felt",
-      },
-      {
-        name: "amount",
-        type: "Uint256",
-      },
-    ],
-    outputs: [
-      {
-        name: "success",
-        type: "felt",
-      },
-    ],
-    state_mutability: "external",
-  },
-  {
-    name: "transfer",
-    type: "function",
-    inputs: [
-      {
-        name: "recipient",
-        type: "felt",
-      },
-      {
-        name: "amount",
-        type: "Uint256",
-      },
-    ],
-    outputs: [
-      {
-        name: "success",
-        type: "felt",
-      },
-    ],
-    state_mutability: "external",
-  },
-] as const
+import { Flex } from "@/components/ui/Flex"
 
 const abi = [
   {
@@ -76,11 +31,10 @@ const abi = [
 ] as const satisfies Abi
 
 const SendMulticall = () => {
-  const { address, account } = useAccount()
+  const { account } = useAccount()
 
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<Error | null>(null)
-  const [txHash, setTxHash] = useState<string | null>(null)
+  const [lastTxStatus, setLastTxStatus] = useState("idle")
+  const [lastTxError, setLastTxError] = useState("")
 
   const { contract } = useContract({
     abi,
@@ -93,61 +47,45 @@ const SendMulticall = () => {
         ? [
             contract.populate("transfer", [
               account?.address,
-              parseInputAmountToUint256("0.0000001"),
+              parseInputAmountToUint256("0.000000001"),
             ]),
             contract.populate("transfer", [
               account?.address,
-              parseInputAmountToUint256("0.0000001"),
+              parseInputAmountToUint256("0.000000002"),
             ]),
           ]
         : undefined,
   })
 
+  const buttonsDisabled = ["approve"].includes(lastTxStatus)
+
   const handleTransferSubmit = async (e: React.FormEvent) => {
     try {
       e.preventDefault()
-      /* setTransactionStatus("approve") */
+      setLastTxStatus("approve")
       const { transaction_hash } = await sendAsync()
+      await provider.waitForTransaction(transaction_hash)
       alert(`Transaction sent: ${transaction_hash}`)
-      /* setTransactionStatus("pending") */
     } catch (error) {
-      console.error(error)
-      /* setTransactionStatus("idle") */
+      setLastTxError((error as Error).message)
+    } finally {
+      setLastTxStatus("idle")
     }
   }
 
-  // Function to execute approve and transfer separately
-
   return (
-    <Button className="full" onClick={handleTransferSubmit}>
-      Send Multicall
-    </Button>
-
-    /*  <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Token Operations</h2>
-
-      <div className="mb-4">
-        <button
-          onClick={() => performApproveAndTransfer()}
-          disabled={loading || !contract}
-          className="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300"
-        >
-          Approve and Transfer 1 ETH (Multicall)
-        </button>
-      </div>
-
-      {loading && (
-        <div className="text-blue-500">Processing transaction...</div>
-      )}
-
-      {error && <div className="text-red-500">Error: {error.message}</div>}
-
-      {txHash && (
-        <div className="text-green-500">
-          Transaction successful! Hash: {txHash}
-        </div>
-      )}
-    </div> */
+    <Flex flexDirection="column" gap="8px">
+      <Button
+        className="full"
+        onClick={handleTransferSubmit}
+        disabled={buttonsDisabled}
+      >
+        Send Multicall
+      </Button>
+      {lastTxError ? (
+        <span style={{ color: "red" }}>Error: {lastTxError}</span>
+      ) : null}
+    </Flex>
   )
 }
 

@@ -1,9 +1,9 @@
 import { ETHTokenAddress } from "@/constants"
-import { CallData, constants, num, shortString } from "starknet"
-import { WalletRpc } from "./WalletRpc"
 import { parseInputAmountToUint256 } from "@/helper/token"
 import { useAccount } from "@starknet-react/core"
 import { useEffect, useState } from "react"
+import { CallData, constants, shortString } from "starknet"
+import { WalletRpc } from "./WalletRpc"
 
 const WalletRpcContainer = () => {
   const { address } = useAccount()

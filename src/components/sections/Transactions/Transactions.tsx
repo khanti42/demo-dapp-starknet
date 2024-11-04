@@ -1,10 +1,9 @@
 import { Flex } from "@/components/ui/Flex"
+import { useAccount } from "@starknet-react/core"
+import { useState } from "react"
 import { Accordion } from "../../ui/Accordion"
 import { Button } from "../../ui/Button"
-import { useState } from "react"
 import { SendERC20 } from "../Transactions/SendERC20"
-import { SimpleTransaction } from "../Transactions/SimpleTransaction"
-import { useAccount } from "@starknet-react/core"
 import { SendMulticall } from "../Transactions/SendMulticall"
 
 const Transactions = () => {
@@ -23,29 +22,23 @@ const Transactions = () => {
             title: "Transactions",
             content: (
               <>
-                <Flex gap="12px">
-                  <Flex flexDirection="column" flex="1" gap="8px">
-                    <Button
-                      className="full"
-                      onClick={() => {
-                        setShowErc20((prev) => !prev)
-                      }}
-                    >
-                      Send ERC20
-                    </Button>
-                    <SimpleTransaction address={address} />
-                  </Flex>
-                  <Flex flexDirection="column" flex="1">
-                    <SendMulticall />
-                  </Flex>
+                <Flex flexDirection="column" gap="12px">
+                  <Button
+                    className="full"
+                    onClick={() => {
+                      setShowErc20((prev) => !prev)
+                    }}
+                  >
+                    Send ERC20
+                  </Button>
+                  {showErc20 && <SendERC20 />}
+                  <SendMulticall />
                 </Flex>
               </>
             ),
           },
         ]}
       />
-
-      {showErc20 && <SendERC20 />}
     </>
   )
 }

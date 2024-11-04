@@ -1,5 +1,5 @@
 import { Flex } from "@/components/ui/Flex"
-import { ETHTokenAddress } from "@/constants"
+import { ETHTokenAddress, provider } from "@/constants"
 import { parseInputAmountToUint256 } from "@/helper/token"
 import {
   Abi,
@@ -32,9 +32,10 @@ const abi = [
 const SendERC20 = () => {
   const [transferTo, setTransferTo] = useState("")
   const [transferAmount, setTransferAmount] = useState("1")
-  const [transactionStatus, setTransactionStatus] = useState<
-    "approve" | "pending" | "idle"
-  >("idle")
+
+  const [lastTxStatus, setLastTxStatus] = useState("idle")
+  const [lastTxError, setLastTxError] = useState("")
+
   const { account } = useAccount()
   const { contract } = useContract({
     abi,
@@ -53,18 +54,19 @@ const SendERC20 = () => {
         : undefined,
   })
 
-  const buttonsDisabled = ["approve", "pending"].includes(transactionStatus)
+  const buttonsDisabled = ["approve"].includes(lastTxStatus)
 
   const handleTransferSubmit = async (e: React.FormEvent) => {
     try {
       e.preventDefault()
-      setTransactionStatus("approve")
+      setLastTxStatus("approve")
       const { transaction_hash } = await sendAsync()
+      await provider.waitForTransaction(transaction_hash)
       alert(`Transaction sent: ${transaction_hash}`)
-      setTransactionStatus("idle")
     } catch (error) {
-      console.error(error)
-      setTransactionStatus("idle")
+      setLastTxError((error as Error).message)
+    } finally {
+      setLastTxStatus("idle")
     }
   }
 
@@ -101,6 +103,9 @@ const SendERC20 = () => {
           >
             <span>Send</span>
           </Button>
+          {lastTxError ? (
+            <span style={{ color: "red" }}>Error: {lastTxError}</span>
+          ) : null}
         </Flex>
       </form>
     </Flex>

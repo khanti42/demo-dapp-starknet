@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, HTMLAttributes } from "react"
+import { ButtonHTMLAttributes, FC } from "react"
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   hideChevron?: boolean

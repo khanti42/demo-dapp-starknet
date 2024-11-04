@@ -15,6 +15,7 @@ const ConnectStarknetkitModal = () => {
       onClick={async () => {
         const { connector } = await starknetkitConnectModal()
         if (!connector) return // or throw error
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         await connectAsync({ connector: connector as any })
       }}
     >

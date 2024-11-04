@@ -15,14 +15,16 @@ export default function Home() {
   const providers = publicProvider()
   return (
     <Flex flexDirection="column" padding="40px 0">
-      {/* TODO: wait for starknet-react to update Connector interface */}
+      {/* eslint-disable @typescript-eslint/no-explicit-any */}
       <StarknetConfig
         chains={chains}
         provider={providers}
+        /* TODO: wait for starknet-react to update Connector interface */
         connectors={connectors as any}
       >
         <StarknetDapp />
       </StarknetConfig>
+      {/* eslint-enable @typescript-eslint/no-explicit-any */}
     </Flex>
   )
 }
