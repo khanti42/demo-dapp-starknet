@@ -1,20 +1,21 @@
 "use client"
 
-import { publicProvider, StarknetConfig } from "@starknet-react/core"
-import { mainnet, sepolia } from "@starknet-react/chains"
-import { constants } from "starknet"
-import { CHAIN_ID } from "@/constants"
-import { connectors } from "@/connectors"
 import { StarknetDapp } from "@/components/StarknetDapp"
 import { Flex } from "@/components/ui/Flex"
+import { connectors } from "@/connectors"
+import { CHAIN_ID } from "@/constants"
+import { mainnet, sepolia } from "@starknet-react/chains"
+import { publicProvider, StarknetConfig } from "@starknet-react/core"
+import { constants } from "starknet"
 
 export default function Home() {
   const chains = [
     CHAIN_ID === constants.NetworkName.SN_MAIN ? mainnet : sepolia,
   ]
   const providers = publicProvider()
+
   return (
-    <Flex flexDirection="column" padding="40px 0">
+    <Flex flexDirection="column" className="demo-dapp-container">
       {/* eslint-disable @typescript-eslint/no-explicit-any */}
       <StarknetConfig
         chains={chains}

@@ -48,7 +48,7 @@ const Accordion: FC<AccordionProps> = ({
     <div style={withBorder ? styles.container : {}}>
       {accordionItems.map((item, index) => (
         <AccordionItem
-          key={index}
+          key={`${item.title}-${index}`}
           title={item.title || "Untitled Section"}
           isOpen={openIndices.includes(index)}
           onClick={() => handleClick(index)}

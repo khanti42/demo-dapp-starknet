@@ -103,3 +103,23 @@ textarea {
 button[type="submit"] {
   background-color: #cefff3;
 }
+
+.demo-dapp-container {
+  padding: 40px 0;
+}
+
+/* Small screens (smartphones) - Portrait and Landscape */
+@media only screen and (max-width: 767px) {
+  .demo-dapp-container {
+    padding: 20px;
+  }
+  /* Your mobile styles here */
+}
+
+/* Extra small screens (smaller smartphones) */
+@media only screen and (max-width: 480px) {
+  /* Your styles for very small devices */
+  .demo-dapp-container {
+    padding: 16px;
+  }
+}
