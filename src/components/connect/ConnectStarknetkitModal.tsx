@@ -18,6 +18,7 @@ const ConnectStarknetkitModal = () => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         await connectAsync({ connector: connector as any })
       }}
+      hideChevron
     >
       Starknetkit Modal
     </Button>
