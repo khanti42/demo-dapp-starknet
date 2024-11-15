@@ -20,7 +20,7 @@ const SectionButton: FC<SectionButtonProps> = ({
   return (
     <Button
       selected={selected}
-      className={`sections-list-button ${disabled ? "disabled" : ""}`}
+      className={`text-section-list-button-text justify-between bg-section-list-button-background ${disabled ? "disabled" : ""}`}
       disabled={disabled}
       onClick={() =>
         setSection((prev?: Section) => (prev === section ? section : section))

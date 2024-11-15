@@ -36,7 +36,7 @@ const Connect = () => {
             Disconnect
           </Button>
         </div>
-        <div className="flex column w-full p-3 bg-[#262933] gap-5 rounded-xl">
+        <div className="flex column w-full p-3 border border-solid border-color-inner-section gap-5 rounded-xl">
           <span className="starknet-react-connectors-title">
             Starknet-react connectors
           </span>

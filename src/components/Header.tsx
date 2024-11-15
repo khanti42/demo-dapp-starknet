@@ -4,6 +4,7 @@ import { useAccount, useBalance } from "@starknet-react/core"
 import { AvatarIcon } from "./icons/AvatarIcon"
 import { LogoIcon } from "./icons/LogoIcon"
 import { WalletIcon } from "./icons/WalletIcon"
+import { ExternalIcon } from "./icons/ExternalIcon"
 
 const Header = () => {
   const { address, isConnected, chainId } = useAccount()
@@ -22,12 +23,14 @@ const Header = () => {
         <div className="flex flex-1 w-full" />
 
         {isConnected && (
-          <div className="flex header-profile-container">
+          <div className="flex  border-col rounded-lg gap-3 p-3 border-2 border-solid border-default-color font-medium">
             <div className="flex items-center gap-2">
               <WalletIcon />
-              {balance && balance?.formatted.length > 7
-                ? `${balance.formatted.slice(0, 7)} ETH`
-                : `${balance?.formatted} ETH`}
+              {balance
+                ? balance?.formatted.length > 7
+                  ? `${balance.formatted.slice(0, 7)} ETH`
+                  : `${balance?.formatted} ETH`
+                : "0 ETH"}
             </div>
             <div className="header-account-separator" />
             <div
@@ -43,6 +46,7 @@ const Header = () => {
             >
               <AvatarIcon />
               {formatTruncatedAddress(address || "")}
+              <ExternalIcon />
             </div>
           </div>
         )}

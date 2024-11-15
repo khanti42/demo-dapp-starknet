@@ -1,16 +1,21 @@
-import { FC, PropsWithChildren } from "react"
+import { FC, PropsWithChildren, ReactNode } from "react"
 import { IconStatusIcon } from "../icons/IconStatusIcon"
 import { InfoIcon } from "../icons/InfoIcon"
 
 interface SectionLayoutProps extends PropsWithChildren {
   sectionTitle: string
+  icon?: ReactNode
 }
 
-const SectionLayout: FC<SectionLayoutProps> = ({ children, sectionTitle }) => {
+const SectionLayout: FC<SectionLayoutProps> = ({
+  children,
+  sectionTitle,
+  icon,
+}) => {
   return (
     <div className="flex section-layout-container">
       <div className="flex section-layout-heading">
-        <IconStatusIcon />
+        {icon ? icon : <IconStatusIcon />}
         <h3 className="section-title">{sectionTitle}</h3>
         <InfoIcon
           style={{

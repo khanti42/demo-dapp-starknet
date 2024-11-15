@@ -9,7 +9,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #000;
+  background-color: #14161c;
   color: #fff;
 }
 
@@ -49,19 +49,14 @@ button {
   padding: 12px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   cursor: pointer;
   gap: 4px;
   position: relative;
 }
 
-button.sections-list-button {
-  background-color: #14161c;
-  color: #6f727c;
-}
-
 button:not(.selected, :disabled):hover {
-  background-color: #464c5e;
+  background-color: #262933;
 }
 
 button.disabled {
@@ -70,23 +65,9 @@ button.disabled {
 }
 
 button.selected {
-  background-color: #aecbfc;
-  color: #090e12;
-}
-
-button.connector {
-  background-color: #464c5e;
-  height: 40px;
-  font-size: 14px;
-  line-height: 14px;
-  font-weight: 500;
-  gap: 8px;
-  justify-content: center;
-}
-
-button.connector > div {
-  gap: 8px;
-  align-items: center;
+  border: solid 1px #aecbfc;
+  color: #aecbfc;
+  background-color: #262933;
 }
 
 .connectors-grid {
@@ -96,37 +77,6 @@ button.connector > div {
 }
 
 /* Button -- END */
-
-.chevron-right {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s;
-  transform: rotate(-90deg);
-  color: #090e12;
-}
-
-.chevron-down {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s;
-  color: #6f727c;
-}
-
-.chevron-up {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s;
-  color: #6f727c;
-  transform: rotate(-180deg);
-}
-
-.chevron-left {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s;
-  color: #6f727c;
-  transform: rotate(-270deg);
-}
 
 input,
 textarea {
@@ -147,13 +97,6 @@ button[type="submit"] {
 
 .header-container {
   padding: 32px 116px 16px;
-}
-
-.header-profile-container {
-  background-color: #14161c;
-  border-radius: 12px;
-  gap: 12px;
-  padding: 16px;
 }
 
 .header-title {
