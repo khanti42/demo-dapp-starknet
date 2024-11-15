@@ -12,7 +12,7 @@ const Network = () => {
 
   return (
     <SectionLayout sectionTitle="Network">
-      <div className="flex full-flex gap-3">
+      <div className="flex flex-1 w-full gap-3">
         <AddNetwork />
         <ChangeNetwork />
       </div>

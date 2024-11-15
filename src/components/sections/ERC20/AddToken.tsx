@@ -27,7 +27,7 @@ const AddToken = () => {
     <SectionLayout sectionTitle="Add Token">
       <div className="flex add-token-container">
         <Button
-          className="full"
+          className="w-full"
           onClick={async () => {
             await walletRequest.requestAsync()
           }}

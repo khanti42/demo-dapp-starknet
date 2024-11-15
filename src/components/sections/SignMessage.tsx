@@ -52,9 +52,9 @@ const SignMessage = () => {
 
   return (
     <SectionLayout sectionTitle="Signing">
-      <div className="flex  full-flex" style={{ marginBottom: "16px" }}>
+      <div className="flex flex-1 w-full" style={{ marginBottom: "16px" }}>
         <form
-          className="sign-message-form full"
+          className="sign-message-form w-full"
           onSubmit={(e) => {
             e.preventDefault()
             handleSignSubmit()
@@ -64,7 +64,7 @@ const SignMessage = () => {
             id="short-text"
             name="short-text"
             placeholder="Short text"
-            className="full"
+            className="w-full"
             value={shortText}
             style={{ height: "160px" }}
             onChange={(e) => setShortText(e.target.value)}

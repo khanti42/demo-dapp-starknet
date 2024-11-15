@@ -20,7 +20,7 @@ const ConnectorButton: FC<{ connector: Connector; icon: ReactNode }> = ({
       className="connector"
       hideChevron
     >
-      <div className="flex align-items-center gap-2">
+      <div className="flex items-center gap-2">
         {icon}
         {connector.name}
       </div>

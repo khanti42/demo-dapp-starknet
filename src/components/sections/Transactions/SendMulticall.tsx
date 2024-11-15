@@ -56,7 +56,7 @@ const SendMulticall = () => {
   return (
     <div className="flex column gap-2">
       <Button
-        className="full"
+        className="w-full"
         onClick={handleTransferSubmit}
         disabled={buttonsDisabled}
         hideChevron

@@ -11,7 +11,7 @@ const ConnectStarknetkitModal = () => {
 
   return (
     <Button
-      className="full"
+      className="w-full"
       onClick={async () => {
         const { connector } = await starknetkitConnectModal()
         if (!connector) return // or throw error

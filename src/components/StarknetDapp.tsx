@@ -16,7 +16,7 @@ const StarknetDapp = () => {
   const { isConnected } = useAccount()
 
   return (
-    <div className="flex full column">
+    <div className="flex w-full column">
       <Header />
 
       <div className="flex get-started-container">
@@ -34,7 +34,7 @@ const StarknetDapp = () => {
       </div>
 
       <div className="flex sections-container">
-        <div className="flex full column sections-list">
+        <div className="flex w-full column sections-list">
           <SectionButton
             section="Connection"
             setSection={setSection}
@@ -66,7 +66,7 @@ const StarknetDapp = () => {
           />
         </div>
 
-        <div className="flex full-flex">
+        <div className="flex flex-1 w-full">
           {section === "Connection" && <Connect />}
           {section === "Transactions" && <Transactions />}
           {section === "Signing" && <SignMessage />}

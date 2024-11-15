@@ -26,7 +26,7 @@ const Button: FC<ButtonProps> = ({
     className={`${props.className} ${selected ? "selected" : ""} ${props.disabled ? "disabled" : ""}`}
     onClick={onClick}
   >
-    <div className="flex align-items-center gap-2">
+    <div className="flex items-center gap-2">
       {leftIcon}
       {children}
     </div>

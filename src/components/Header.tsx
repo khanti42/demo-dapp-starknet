@@ -19,7 +19,7 @@ const Header = () => {
       <div className="flex header-logo-container">
         <LogoIcon />
         <h1 className="header-title">Demo dapp</h1>
-        <div className="flex full-flex" />
+        <div className="flex flex-1 w-full" />
 
         {isConnected && (
           <div className="flex header-profile-container">

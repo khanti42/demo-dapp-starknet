@@ -27,7 +27,7 @@ const Connect = () => {
         <div className="flex gap-3">
           <ConnectStarknetkitModal />
           <Button
-            className={`full ${!isConnected ? "disabled" : ""}`}
+            className={`w-full ${!isConnected ? "disabled" : ""}`}
             onClick={() => disconnect()}
             disabled={!isConnected}
             hideChevron

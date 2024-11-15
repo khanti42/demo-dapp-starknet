@@ -26,7 +26,7 @@ const AddNetwork = () => {
   return (
     <div className="flex network-container">
       <Button
-        className="full"
+        className="w-full"
         onClick={async () => {
           await walletRequest.requestAsync()
         }}
