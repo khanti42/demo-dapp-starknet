@@ -16,7 +16,7 @@ const Header = () => {
   const hexChainId = toHexChainid(chainId)
 
   return (
-    <div className="flex header-container">
+    <div className="flex header-container bg-heading-bg">
       <div className="flex gap-3 items-center w-full">
         <LogoIcon />
         <h1 className="header-title">Demo dapp</h1>

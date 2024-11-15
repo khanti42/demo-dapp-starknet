@@ -21,7 +21,7 @@ const Box: FC<BoxProps> = ({ title, value, copy, truncate }) => (
   <div className="flex flex-col rounded gap-2 overflow-hidden">
     <span className="status-grid-item-title text-color-[#646876]">{title}</span>
     <span
-      className={`status-grid-item-value ${truncate ? "truncate" : ""} font-size-[16px] ${!value ? "text-not-connected" : "text-color-white"}`}
+      className={`status-grid-item-value ${truncate ? "truncate" : ""} font-size-[16px] ${!value ? "text-lavander-sky" : "text-color-white"}`}
     >
       {value || "-"}
       {value && copy && <CopyIcon />}

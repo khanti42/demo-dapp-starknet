@@ -9,7 +9,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #14161c;
+  background-color: #000;
   color: #fff;
 }
 
@@ -242,7 +242,6 @@ button[type="submit"] {
 /* Sections list */
 .sections-container {
   gap: 180px;
-  background-color: #090e12;
   padding: 76px 116px;
   flex: 1;
   height: 100%;

@@ -10,6 +10,7 @@ import { AddToken } from "./sections/ERC20/AddToken"
 import { Network } from "./sections/Network/Network"
 import { SectionButton } from "./sections/SectionButton"
 import { Section } from "./sections/types"
+import { GithubLogo } from "./icons/GithubLogo"
 
 const StarknetDapp = () => {
   const [section, setSection] = useState<Section | undefined>(undefined)
@@ -19,7 +20,7 @@ const StarknetDapp = () => {
     <div className="flex w-full h-full column">
       <Header />
 
-      <div className="flex gap-[120px] py-[56px] px-[116px]">
+      <div className="flex gap-[120px] py-[56px] px-[116px] bg-heading-bg">
         <div className="flex column gap-2.5">
           <h1 className="get-started-title">your</h1>
           <span className="get-started-subtitle">
@@ -33,7 +34,7 @@ const StarknetDapp = () => {
         </div>
       </div>
 
-      <div className="flex sections-container">
+      <div className="flex gap-[180px] py-[76px] px-[116px] flex-1 h-full">
         <div className="flex w-full column gap-3 flex-[0.5]">
           <SectionButton
             section="Connection"
@@ -74,6 +75,16 @@ const StarknetDapp = () => {
           {section === "ERC20" && <AddToken />}
         </div>
       </div>
+      <a
+        href="https://github.com/argentlabs/demo-dapp-starknet"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <div className="flex items-center cursor-pointer w-full justify-end px-[116px] py-10 text-lavander-sky gap-2">
+          <GithubLogo />
+          Github
+        </div>
+      </a>
     </div>
   )
 }
