@@ -18,7 +18,7 @@ interface BoxProps {
 }
 
 const Box: FC<BoxProps> = ({ title, value, copy, truncate }) => (
-  <div className="flex status-grid-item">
+  <div className="flex flex-col rounded gap-2 overflow-hidden">
     <span className="status-grid-item-title">{title}</span>
     <span className={`status-grid-item-value ${truncate ? "truncate" : ""}`}>
       {value || "-"}

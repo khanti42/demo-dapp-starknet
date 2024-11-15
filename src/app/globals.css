@@ -143,41 +143,10 @@ button[type="submit"] {
   text-align: center;
 }
 
-.demo-dapp-container {
-  height: 100vh;
-  flex-direction: column;
-}
-
-.demo-dapp-container > div {
-  height: 100%;
-}
-
-/* Small screens (smartphones) - Portrait and Landscape */
-@media only screen and (max-width: 767px) {
-  .demo-dapp-container {
-    padding: 20px;
-  }
-  /* Your mobile styles here */
-}
-
-/* Extra small screens (smaller smartphones) */
-@media only screen and (max-width: 480px) {
-  /* Your styles for very small devices */
-  .demo-dapp-container {
-    padding: 16px;
-  }
-}
-
 /* Header */
 
 .header-container {
   padding: 32px 116px 16px;
-}
-
-.header-logo-container {
-  gap: 12px;
-  align-items: center;
-  width: 100%;
 }
 
 .header-profile-container {
@@ -185,17 +154,6 @@ button[type="submit"] {
   border-radius: 12px;
   gap: 12px;
   padding: 16px;
-}
-
-.header-balance {
-  align-items: center;
-  gap: 8px;
-}
-
-.header-address {
-  cursor: pointer;
-  align-items: center;
-  gap: 8px;
 }
 
 .header-title {
@@ -250,15 +208,6 @@ button[type="submit"] {
   width: 17px;
 }
 
-.get-started-container {
-  gap: 120px;
-  padding: 56px 116px;
-}
-
-.get-started-container > div {
-  gap: 10px;
-}
-
 .get-started-title {
   font-size: 48px;
   font-weight: 600;
@@ -309,13 +258,6 @@ button[type="submit"] {
   gap: 80px;
 }
 
-.status-grid-item {
-  border-radius: 4px;
-  flex-direction: column;
-  gap: 8px;
-  overflow: hidden;
-}
-
 .status-grid-item-title {
   font-size: 14px;
   font-weight: 500;
@@ -363,22 +305,9 @@ button[type="submit"] {
   height: 100%;
 }
 
-.sections-list {
-  gap: 12px;
-  flex: 0.5;
-}
-
 /* Section list - End */
 
 /* Connection -- Start */
-
-.available-connector {
-  width: 100%;
-  padding: 12px;
-  background-color: #262933;
-  border-radius: 12px;
-  gap: 20px;
-}
 
 .starknet-react-connectors-title {
   font-size: 16px;
@@ -389,30 +318,3 @@ button[type="submit"] {
   text-decoration-skip-ink: none;
 }
 /* Connection -- End */
-
-/* Sign message */
-.sign-message-form {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 4;
-  gap: 12px;
-  width: 100%;
-}
-/* Sign message -- End */
-
-.add-token-container {
-  color: 000;
-  border-width: 0px;
-  border-radius: 8px;
-  justify-content: flex-start;
-  width: 50%;
-}
-
-.network-container {
-  color: 000;
-  border-width: 0px;
-  border-radius: 8px;
-  justify-content: flex-start;
-  width: 100%;
-}

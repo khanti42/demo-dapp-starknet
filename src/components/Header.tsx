@@ -16,14 +16,14 @@ const Header = () => {
 
   return (
     <div className="flex header-container">
-      <div className="flex header-logo-container">
+      <div className="flex gap-3 items-center w-full">
         <LogoIcon />
         <h1 className="header-title">Demo dapp</h1>
         <div className="flex flex-1 w-full" />
 
         {isConnected && (
           <div className="flex header-profile-container">
-            <div className="flex header-balance">
+            <div className="flex items-center gap-2">
               <WalletIcon />
               {balance && balance?.formatted.length > 7
                 ? `${balance.formatted.slice(0, 7)} ETH`
@@ -31,7 +31,7 @@ const Header = () => {
             </div>
             <div className="header-account-separator" />
             <div
-              className="flex header-address"
+              className="flex cursor-pointer items-center gap-2"
               onClick={() =>
                 window.open(
                   isMainnet(hexChainId)

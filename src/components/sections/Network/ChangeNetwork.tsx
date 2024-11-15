@@ -16,7 +16,7 @@ const ChangeNetwork = () => {
   })
 
   return (
-    <div className="flex network-container">
+    <div className="flex w-full justify-start">
       <Button
         className="w-full"
         onClick={async () => {

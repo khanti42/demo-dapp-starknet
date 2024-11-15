@@ -25,7 +25,7 @@ const AddToken = () => {
 
   return (
     <SectionLayout sectionTitle="Add Token">
-      <div className="flex add-token-container">
+      <div className="flex w-1/2 justify-start">
         <Button
           className="w-full"
           onClick={async () => {

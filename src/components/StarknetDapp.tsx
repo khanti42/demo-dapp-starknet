@@ -16,11 +16,11 @@ const StarknetDapp = () => {
   const { isConnected } = useAccount()
 
   return (
-    <div className="flex w-full column">
+    <div className="flex w-full h-full column">
       <Header />
 
-      <div className="flex get-started-container">
-        <div className="flex column">
+      <div className="flex gap-[120px] py-[56px] px-[116px]">
+        <div className="flex column gap-2.5">
           <h1 className="get-started-title">your</h1>
           <span className="get-started-subtitle">
             Starknet utilizes the power of STARK technology to ensure
@@ -34,7 +34,7 @@ const StarknetDapp = () => {
       </div>
 
       <div className="flex sections-container">
-        <div className="flex w-full column sections-list">
+        <div className="flex w-full column gap-3 flex-[0.5]">
           <SectionButton
             section="Connection"
             setSection={setSection}

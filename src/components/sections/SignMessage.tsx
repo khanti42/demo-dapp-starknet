@@ -54,7 +54,7 @@ const SignMessage = () => {
     <SectionLayout sectionTitle="Signing">
       <div className="flex flex-1 w-full" style={{ marginBottom: "16px" }}>
         <form
-          className="sign-message-form w-full"
+          className="flex flex-1 flex-col  w-full gap-3"
           onSubmit={(e) => {
             e.preventDefault()
             handleSignSubmit()
