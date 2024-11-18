@@ -16,10 +16,10 @@ const Header = () => {
   const hexChainId = toHexChainid(chainId)
 
   return (
-    <div className="flex header-container bg-heading-bg">
+    <div className="flex pt-[32px] px-[116px] pb-[16px] bg-heading-bg">
       <div className="flex gap-3 items-center w-full">
         <LogoIcon />
-        <h1 className="header-title">Demo dapp</h1>
+        <h1 className="font-normal text-xl leading-6 mt-0.5">Demo dapp</h1>
         <div className="flex flex-1 w-full" />
 
         {isConnected && (

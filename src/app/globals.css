@@ -34,7 +34,6 @@ a {
   flex-direction: column;
 }
 
-/* Button -- START */
 button {
   font-size: 18px;
   font-weight: 500;
@@ -70,14 +69,6 @@ button.selected {
   background-color: #262933;
 }
 
-.connectors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-}
-
-/* Button -- END */
-
 input,
 textarea {
   padding: 8px;
@@ -93,52 +84,15 @@ button[type="submit"] {
   text-align: center;
 }
 
-/* Header */
-
-.header-container {
-  padding: 32px 116px 16px;
-}
-
-.header-title {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 1%;
-  margin-top: 2px;
-}
-
 .header-account-separator {
   border-left: solid 1px #464c5e;
   margin: -4px 0;
 }
 
-/* Header - END */
-
-/* Section */
-.section-layout-heading {
-  gap: 8px;
-  position: relative;
-  border-bottom: solid 1px #262933;
-  padding-bottom: 16px;
-}
-
-.section-layout-container {
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-  background-color: #14161c;
-  padding: 24px;
-  border-radius: 12px;
-  height: fit-content;
-}
-
-.section-title {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 24px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
+.connectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
 }
 
 .connector-icon {
@@ -188,14 +142,9 @@ button[type="submit"] {
   text-decoration-skip-ink: none;
 }
 
-/* Section */
-
-/* Status -- Start */
 .status-grid-container {
-  /* Create a grid with auto-fill columns, minimum 200px width */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* Limit to maximum 4 columns using max-width */
   max-width: 800px;
   width: 100%;
   gap: 80px;
@@ -231,32 +180,8 @@ button[type="submit"] {
   white-space: nowrap;
 }
 
-/* Ensure no more than 4 columns at any viewport width */
 @media (min-width: 1000px) {
   .status-grid-container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-/* Status -- End */
-
-/* Sections list */
-.sections-container {
-  gap: 180px;
-  padding: 76px 116px;
-  flex: 1;
-  height: 100%;
-}
-
-/* Section list - End */
-
-/* Connection -- Start */
-
-.starknet-react-connectors-title {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-}
-/* Connection -- End */

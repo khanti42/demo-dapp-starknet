@@ -37,7 +37,7 @@ const Connect = () => {
           </Button>
         </div>
         <div className="flex column w-full p-3 border border-solid border-color-inner-section gap-5 rounded-xl">
-          <span className="starknet-react-connectors-title">
+          <span className="text-base font-medium leading-6 text-left">
             Starknet-react connectors
           </span>
           <div className="connectors-grid">

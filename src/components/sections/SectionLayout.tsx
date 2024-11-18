@@ -13,10 +13,12 @@ const SectionLayout: FC<SectionLayoutProps> = ({
   icon,
 }) => {
   return (
-    <div className="flex section-layout-container">
-      <div className="flex section-layout-heading">
+    <div className="flex flex-col gap-6 w-full h-fit p-6 rounded-xl bg-section-list-button-background">
+      <div className="flex pb-4 gap-2 relative border-solid border-b-[1px] border-color-inner-section ">
         {icon ? icon : <IconStatusIcon />}
-        <h3 className="section-title">{sectionTitle}</h3>
+        <h3 className="text-lg font-semibold leading-6 text-left">
+          {sectionTitle}
+        </h3>
         <InfoIcon
           style={{
             position: "absolute",
