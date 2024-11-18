@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss"
 
+export const pxToEm = (value?: number | string) => `${Number(value) / 16}em`
+
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,17 +9,28 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: pxToEm(375),
+      sm: pxToEm(768),
+      md: pxToEm(834),
+      lg: pxToEm(1024),
+      xl: pxToEm(1280),
+      xxl: pxToEm(1440),
+    },
     extend: {
+      gridTemplateColumns: {
+        "connectors-grid": "repeat(auto-fill, minmax(200px, 1fr))",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        "heading-bg": "#14161C",
+        black: "#14161C",
         "lavander-sky": "#A1A1D6",
-        "default-color": "#464C5E",
-        "color-inner-section": "#262933",
+        charcoal: "#464C5E",
+        "raisin-black": "#262933",
         "light-blue": "#aecbfc",
-        "section-list-button-text": "#6f727c",
-        "section-list-button-background": "#14161c",
+        "dark-grey": "#646876",
+        "medium-grey": "#6f727c",
       },
     },
   },

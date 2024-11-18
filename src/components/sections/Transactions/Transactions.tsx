@@ -13,7 +13,7 @@ const Transactions = () => {
 
   return (
     <SectionLayout sectionTitle="Transactions" icon={<TransactionsIcon />}>
-      <div className="flex column gap-3">
+      <div className="flex flex-col lg:flex-row gap-3">
         <SendERC20 />
         <SendMulticall />
       </div>

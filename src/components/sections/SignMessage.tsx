@@ -53,7 +53,7 @@ const SignMessage = () => {
 
   return (
     <SectionLayout sectionTitle="Signing" icon={<SigningIcon />}>
-      <div className="flex flex-1 w-full bg-color-inner-section rounded-lg p-3">
+      <div className="flex flex-1 w-full bg-raisin-black rounded-lg p-3">
         <form
           className="flex flex-1 flex-col w-full gap-4"
           onSubmit={(e) => {

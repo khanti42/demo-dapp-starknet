@@ -1,8 +1,7 @@
 import { useConnect } from "@starknet-react/core"
 import { StarknetkitConnector, useStarknetkitConnectModal } from "starknetkit"
-import { Button } from "../ui/Button"
 
-const ConnectStarknetkitModal = () => {
+const HeaderConnectButton = () => {
   const { connectAsync, connectors } = useConnect()
 
   const { starknetkitConnectModal } = useStarknetkitConnectModal({
@@ -10,8 +9,8 @@ const ConnectStarknetkitModal = () => {
   })
 
   return (
-    <Button
-      className="w-full justify-start md:justify-center"
+    <button
+      className="bg-gradient-to-r from-[#EC796B] to-[#D672EF]"
       onClick={async () => {
         const { connector } = await starknetkitConnectModal()
         if (!connector) {
@@ -20,11 +19,10 @@ const ConnectStarknetkitModal = () => {
         }
         await connectAsync({ connector })
       }}
-      hideChevron
     >
-      Starknetkit Modal
-    </Button>
+      Connect wallet
+    </button>
   )
 }
 
-export { ConnectStarknetkitModal }
+export { HeaderConnectButton }

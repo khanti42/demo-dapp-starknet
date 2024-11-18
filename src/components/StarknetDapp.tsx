@@ -20,50 +20,57 @@ const StarknetDapp = () => {
     <div className="flex w-full h-full column">
       <Header />
 
-      <div className="flex gap-[120px] py-[56px] px-[116px] bg-heading-bg">
+      <div className="flex p-5 md:gap-[120px] md:py-[56px] md:px-[116px] bg-black">
         <div className="flex column gap-2.5">
-          <h1 className="get-started-title">your</h1>
-          <span className="get-started-subtitle">
+          <h1 className="get-started-title text-[32px] leading-[34px] md:text-[48px] md:leading-[58px] text-white font-semibold text-left">
+            your
+          </h1>
+          <span className="text-dark-grey text-base font-normal leading-6 md:font-medium text-left">
             Starknet utilizes the power of STARK technology to ensure
             computational integrity.
           </span>
         </div>
 
-        <div className="status-grid-container">
+        <div className="w-full hidden md:grid md:max-w-[800px] sm:gap-5 lg:gap-10 xl:gap-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <AccountStatus />
         </div>
       </div>
 
-      <div className="flex gap-[180px] py-[76px] px-[116px] flex-1 h-full">
-        <div className="flex w-full column gap-3 flex-[0.5]">
+      <div className="flex flex-col md:flex-row p-5 gap-3 md:gap-20 lg:gap-40 md:py-[56px] md:px-[116px] flex-1 h-full">
+        <div className="flex w-full column gap-3 md:flex-[0.5]">
           <SectionButton
             section="Connection"
             setSection={setSection}
             selected={section === "Connection"}
+            className={`${!section ? "md:flex" : section === "Connection" ? "flex" : "md:flex hidden"}`}
           />
           <SectionButton
             section="Transactions"
             setSection={setSection}
             selected={section === "Transactions"}
             disabled={!isConnected}
+            className={`${!section ? "flex" : section === "Transactions" ? "flex" : "md:flex hidden"}`}
           />
           <SectionButton
             section="Signing"
             setSection={setSection}
             selected={section === "Signing"}
             disabled={!isConnected}
+            className={`${!section ? "flex" : section === "Signing" ? "flex" : "md:flex hidden"}`}
           />
           <SectionButton
             section="Network"
             setSection={setSection}
             selected={section === "Network"}
             disabled={!isConnected}
+            className={`${!section ? "flex" : section === "Network" ? "flex" : "md:flex hidden"}`}
           />
           <SectionButton
             section="ERC20"
             setSection={setSection}
             selected={section === "ERC20"}
             disabled={!isConnected}
+            className={`${!section ? "flex" : section === "ERC20" ? "flex" : "md:flex hidden"}`}
           />
         </div>
 
@@ -80,7 +87,7 @@ const StarknetDapp = () => {
         target="_blank"
         rel="noreferrer"
       >
-        <div className="flex items-center cursor-pointer w-full justify-end px-[116px] py-10 text-lavander-sky gap-2">
+        <div className="flex items-center cursor-pointer w-full justify-center md:justify-end p-5 md:py-10 md:px-[116px] text-lavander-sky gap-2">
           <GithubLogo />
           Github
         </div>
