@@ -97,6 +97,8 @@ textarea {
 }
 
 .get-started-title {
+  font-size: 40px;
+  line-height: 42px;
   color: #6f727c;
 }
 

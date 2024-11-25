@@ -1,6 +1,5 @@
 import { FC, PropsWithChildren, ReactNode } from "react"
 import { IconStatusIcon } from "../icons/IconStatusIcon"
-import { InfoIcon } from "../icons/InfoIcon"
 
 interface SectionLayoutProps extends PropsWithChildren {
   sectionTitle: string
@@ -19,12 +18,6 @@ const SectionLayout: FC<SectionLayoutProps> = ({
         <h3 className="text-lg font-semibold leading-6 text-left">
           {sectionTitle}
         </h3>
-        <InfoIcon
-          style={{
-            position: "absolute",
-            right: "0",
-          }}
-        />
       </div>
       <div className="flex column gap-3">{children}</div>
     </div>

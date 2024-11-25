@@ -9,19 +9,21 @@ const HeaderConnectButton = () => {
   })
 
   return (
-    <button
-      className="bg-gradient-to-r from-[#EC796B] to-[#D672EF]"
-      onClick={async () => {
-        const { connector } = await starknetkitConnectModal()
-        if (!connector) {
-          // or throw error
-          return
-        }
-        await connectAsync({ connector })
-      }}
-    >
-      Connect wallet
-    </button>
+    <>
+      <button
+        className="bg-gradient-to-r from-nebula-from to-nebula-to"
+        onClick={async () => {
+          const { connector } = await starknetkitConnectModal()
+          if (!connector) {
+            // or throw error
+            return
+          }
+          await connectAsync({ connector })
+        }}
+      >
+        Connect wallet
+      </button>
+    </>
   )
 }
 

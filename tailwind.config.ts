@@ -31,6 +31,8 @@ export default {
         "light-blue": "#aecbfc",
         "dark-grey": "#646876",
         "medium-grey": "#6f727c",
+        "nebula-from": "#EC796B",
+        "nebula-to": "#D672EF",
       },
     },
   },
