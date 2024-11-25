@@ -11,7 +11,9 @@ const HeaderConnectButton = () => {
   return (
     <>
       <button
-        className="bg-gradient-to-r from-nebula-from to-nebula-to"
+        style={{
+          background: "linear-gradient(to bottom right, #EC796B, #D672EF)",
+        }}
         onClick={async () => {
           const { connector } = await starknetkitConnectModal()
           if (!connector) {
