@@ -92,7 +92,7 @@ const StarknetDapp = () => {
         target="_blank"
         rel="noreferrer"
       >
-        <div className="flex items-center cursor-pointer w-full justify-center md:justify-end p-5 md:py-10 md:px-[116px] text-lavander-sky gap-2">
+        <div className="flex items-center cursor-pointer w-full justify-center p-5 md:py-10 md:px-[116px] text-lavander-sky gap-2">
           <GithubLogo />
           Github
         </div>

@@ -1,5 +1,4 @@
 import { ButtonHTMLAttributes, FC, ReactNode } from "react"
-import { ChevronDown, ChevronRight } from "../icons/Chevron"
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   hideChevron?: boolean
@@ -32,7 +31,21 @@ const Button: FC<ButtonProps> = ({
     </div>
 
     {(!hideChevron || rightIcon) && (
-      <>{selected ? <ChevronRight /> : <ChevronDown />}</>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={`transform transition-transform duration-400 ease-in-out ${
+          selected ? "rotate-90" : ""
+        }`}
+      >
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
     )}
 
     {rightIcon && <div>{rightIcon}</div>}
