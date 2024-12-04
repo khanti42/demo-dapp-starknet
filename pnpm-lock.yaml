@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@starknet-io/get-starknet-core':
+        specifier: 4.0.4
+        version: 4.0.4
       '@starknet-react/chains':
         specifier: ^3.1.0
         version: 3.1.0
